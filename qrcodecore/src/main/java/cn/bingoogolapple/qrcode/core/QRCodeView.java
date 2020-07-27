@@ -69,8 +69,8 @@ public abstract class QRCodeView extends RelativeLayout implements Camera.Previe
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(context, attrs);
         layoutParams.addRule(RelativeLayout.ALIGN_TOP, mCameraPreview.getId());
         layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM, mCameraPreview.getId());
-        layoutParams.width=300;
-        layoutParams.height=400;
+        layoutParams.width = LayoutParams.MATCH_PARENT;
+        layoutParams.height = LayoutParams.MATCH_PARENT;
         addView(mScanBoxView, layoutParams);
 
         mPaint = new Paint();
@@ -564,7 +564,7 @@ public abstract class QRCodeView extends RelativeLayout implements Camera.Previe
     }
 
     private PointF transform(float originX, float originY, float cameraPreviewWidth, float cameraPreviewHeight, boolean isMirrorPreview, int statusBarHeight,
-            final Rect scanBoxAreaRect) {
+                             final Rect scanBoxAreaRect) {
         int viewWidth = getWidth();
         int viewHeight = getHeight();
 
