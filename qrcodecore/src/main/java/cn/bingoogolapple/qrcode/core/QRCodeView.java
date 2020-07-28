@@ -91,6 +91,7 @@ public abstract class QRCodeView extends RelativeLayout implements Camera.Previe
         mScanBoxView.setShowDefaultScanLineDrawable(true);
         mScanBoxView.setAutoZoom(true);
         mScanBoxView.setShowLocationPoint(true);
+        mScanBoxView.setVerticalBias(0.5f);
         mScanBoxView.afterInitCustomAttrs();
     }
 
