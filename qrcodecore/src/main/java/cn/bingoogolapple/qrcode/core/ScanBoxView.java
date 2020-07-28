@@ -213,7 +213,7 @@ public class ScanBoxView extends View {
         }
     }
 
-    private void afterInitCustomAttrs() {
+    public void afterInitCustomAttrs() {
         if (mCustomGridScanLineDrawable != null) {
             mOriginQRCodeGridScanLineBitmap = ((BitmapDrawable) mCustomGridScanLineDrawable).getBitmap();
         }

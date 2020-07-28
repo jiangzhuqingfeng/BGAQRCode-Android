@@ -6,6 +6,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
 import android.graphics.Rect;
@@ -68,6 +69,7 @@ public abstract class QRCodeView extends RelativeLayout implements Camera.Previe
 
         mScanBoxView = new ScanBoxView(context);
         mScanBoxView.init(this, attrs);
+        initScan();
         mCameraPreview.setId(R.id.bgaqrcode_camera_preview);
         addView(mCameraPreview);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
@@ -80,6 +82,16 @@ public abstract class QRCodeView extends RelativeLayout implements Camera.Previe
         mPaint = new Paint();
         mPaint.setColor(getScanBoxView().getCornerColor());
         mPaint.setStyle(Paint.Style.FILL);
+    }
+
+    private void initScan() {
+        mScanBoxView.setCornerColor(Color.parseColor("#5d96fa"));
+        mScanBoxView.setScanLineColor(Color.parseColor("#5d96fa"));
+        mScanBoxView.setCustomScanLineDrawable(getResources().getDrawable(R.mipmap.scan_icon_scanline));
+        mScanBoxView.setShowDefaultScanLineDrawable(true);
+        mScanBoxView.setAutoZoom(true);
+        mScanBoxView.setShowLocationPoint(true);
+        mScanBoxView.afterInitCustomAttrs();
     }
 
     private void setOneShotPreviewCallback() {

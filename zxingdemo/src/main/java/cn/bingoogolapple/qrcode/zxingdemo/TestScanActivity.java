@@ -2,6 +2,7 @@ package cn.bingoogolapple.qrcode.zxingdemo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,10 @@ public class TestScanActivity extends AppCompatActivity implements QRCodeView.De
 
         mZXingView = findViewById(R.id.zxingview);
         mZXingView.setDelegate(this);
+        initZxingView();
+    }
+
+    private void initZxingView() {
     }
 
     @Override
