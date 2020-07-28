@@ -28,6 +28,10 @@ public class ZXingView extends QRCodeView {
     private MultiFormatReader mMultiFormatReader;
     private Map<DecodeHintType, Object> mHintMap;
 
+    public ZXingView(Context context) {
+        this(context,null);
+    }
+
     public ZXingView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
     }

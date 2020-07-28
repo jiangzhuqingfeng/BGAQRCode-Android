@@ -43,6 +43,10 @@ public abstract class QRCodeView extends RelativeLayout implements Camera.Previe
     // 亮度低的阀值
     private static final int AMBIENT_BRIGHTNESS_DARK = 60;
 
+    public QRCodeView(Context context) {
+        this(context, null);
+    }
+
     public QRCodeView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
     }
@@ -66,11 +70,11 @@ public abstract class QRCodeView extends RelativeLayout implements Camera.Previe
         mScanBoxView.init(this, attrs);
         mCameraPreview.setId(R.id.bgaqrcode_camera_preview);
         addView(mCameraPreview);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(context, attrs);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         layoutParams.addRule(RelativeLayout.ALIGN_TOP, mCameraPreview.getId());
         layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM, mCameraPreview.getId());
-        layoutParams.width = LayoutParams.MATCH_PARENT;
-        layoutParams.height = LayoutParams.MATCH_PARENT;
+//        layoutParams.width = LayoutParams.MATCH_PARENT;
+//        layoutParams.height = LayoutParams.MATCH_PARENT;
         addView(mScanBoxView, layoutParams);
 
         mPaint = new Paint();
